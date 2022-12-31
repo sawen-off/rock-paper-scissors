@@ -10,6 +10,7 @@ g="answer"
 answerequality="Egalité"
 answerlost="Vous avez perdu"
 answerwon="Vous avez gagné"
+error="Veuillez entrer une valeur valide"
 
 nbround=0
 nbroundlost=0
@@ -36,6 +37,7 @@ while continuer:
         print("Résultat:")
     elif userchoice.lower()!="pierres" and "ciseaux" and "feuilles" and "papiers": 
         print('veuillez entrer une valeur valide !')
+        g=error
 
     if computerchoice=="pierre" and userchoice.lower() in"pierres" or computerchoice=="ciseaux" and userchoice.lower() in"ciseaux" or computerchoice=="feuille" and userchoice.lower() in"feuilles papiers":
         g=answerequality
@@ -60,7 +62,9 @@ print("""
 INFO SUPPLEMENTAIRE
 -----------------------------
 """)
-if g==answerequality:
+if g==error:
+    print("Arrêt: sur une érreur")
+elif g==answerequality:
     print("Arrêt: sur une égalitée")
 elif g==answerlost:
     print("Arrêt: sur une défaite")
